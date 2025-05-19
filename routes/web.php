@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[FrontController::class,'index']);
 
 
 Auth::routes();
@@ -36,3 +34,6 @@ Route::resource('game', GameController::class);
 Route::prefix('admin')->middleware('auth', isadmin::class)->group(function () {
 
 });
+
+
+

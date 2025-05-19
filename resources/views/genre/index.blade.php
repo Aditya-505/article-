@@ -15,21 +15,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{{ asset ('admin/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset ('admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset ('admin/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset ('admin/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{asset ('admin/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset ('admin/css/style.css') }}" rel="stylesheet">
 </head>
+
+<center>
 
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -40,7 +42,7 @@
             </div>
         </div>
         <!-- Spinner End -->
-
+         
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
@@ -60,17 +62,17 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                    <a href="{{route('genre.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Genre</a>
+                    </div>
+                     <a href="{{route('genre.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Genre</a>
                     <div class="nav-item dropdown">
                     </div>
-                    <a href="{{route('game.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Game</a>
+                     <a href="{{route('game.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Game</a>
                     <div class="nav-item dropdown">
                     </div>
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
-
 
         <!-- Content Start -->
         <div class="content">
@@ -79,65 +81,16 @@
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0"><i class="fa fa-bars"></i></a>
+
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
+                    <!-- Messages Dropdown (Placeholder) -->
+                    <div class="nav-item dropdown"></div>
+
+                    <!-- Notifications Dropdown (Placeholder) -->
+                    <div class="nav-item dropdown"></div>
+
+                    <!-- User Profile Dropdown -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
@@ -152,67 +105,71 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-              <div class="col-lg-13">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"> 
-                                     </table>     
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                                 <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Kategori</h6>
-                            <table class="table">
-                    <thead>
-                                    <a href="{{ route('genre.create') }}" class="btn btn-outline-primary btn-sm"
-                                            style="float: right ">Tambah</a>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Genre</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                     <tbody>
-                            @php $no = 1; @endphp
-                            @foreach ($genre as $data)
-                            <tr>
-                                <td scope="row">{{ $no++ }}</td>
-                                <td scope="row">{{ $data->genre }}</td>
-                                <td>
-                                    <form action="{{ route('genre.destroy', $data->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <a href="{{ route('genre.edit', $data->id) }}" class="btn btn-success btn-sm">Edit</a>
-                                        <a href="{{ route('genre.show', $data->id) }}" class="btn btn-warning btn-sm">Show</a>
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </thead>
-                                </tbody>
-                            </table>
+
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
                         </div>
                     </div>
-            <!-- Sale & Revenue Start -->
-           
-            <!-- Sale & Revenue End -->
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="{{ route('genre.create') }}" class="btn btn-outline-primary btn-sm float-end">Tambah</a>
+                                <h3 class="page-header">Kategori</h3>
+                            </div>
+                            <div class="card-body">
+                                @if (session('success'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
 
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Genre</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php $no = 1; @endphp
+                                            @foreach ($genre as $data)
+                                                <tr>
+                                                    <td>{{ $no++ }}</td>
+                                                    <td>{{ $data->genre }}</td>
+                                                    <td>
+                                                        <form action="{{ route('genre.destroy', $data->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a href="{{ route('genre.show', $data->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye-fill"></i></a>
+                                                            <a href="{{ route('genre.edit', $data->id) }}" class="btn btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')"><i class="bi bi-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-           
+                    <!-- Footer Start -->
+                    <!-- Footer End -->
 
+                </div>
+            </div>
+            <!-- End of Page Content -->
 
-            <!-- Footer Start -->
-          
-            <!-- Footer End -->
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
         <!-- Content End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -227,7 +184,9 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="{{ asset ('admin/js/main.js') }}"></script>
+    <script src="{{ asset('admin/js/main.js') }}"></script>
 </body>
+
+</center>
 
 </html>

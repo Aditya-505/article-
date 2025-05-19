@@ -169,11 +169,17 @@
                             <div class="mb-3">
                                 <label>Judul</label>
                                 <input type="text" class="form-control" name="judul">
+                               @error('judul')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label>Deskripsi</label>
                                 <textarea type="textarea" class="form-control" name="deskripsi">
                                 </textarea>
+                                @error('deskripsi')
+                                 <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="foto">Foto</label>
@@ -185,6 +191,9 @@
                             <div class="mb-3">
                                 <label>Penulis</label>
                                 <input type="text" class="form-control" name="penulis">
+                                @error('penulis')
+                                 <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Id genre</label>
@@ -193,6 +202,9 @@
                                         <option value="{{ $data->id }}">{{ $data->genre }}</option>
                                     @endforeach
                                 </select>
+                                @error('id_genre')
+                                 <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-success">Simpan</button>

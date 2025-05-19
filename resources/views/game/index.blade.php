@@ -140,16 +140,21 @@
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{ $data->judul }}</td>
                                                     <td>{{ $data->deskripsi }}</td>
-                                                    <td><img src="{{ asset('storage/game/' . $data->foto) }}" alt="" style="width: 50px; height: 50px;"></td>
+                                                    <td>
+                                                        @if ($data->foto)
+                                                        <img src="{{ asset('storage/game/' . $data->foto) }}" alt="" style="width: 50px; height: 50px;"></td>
+                                                        @else
+                                                        <span>tidak ada gambar</span>
+                                                        @endif
                                                     <td>{{ $data->penulis }}</td>
-                                                    <td>{{ $data->id_genre }}</td>
+                                                    <td>{{ $data->genre->genre }}</td>
                                                     <td>
                                                         <form action="{{ route('game.destroy', $data->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <a href="{{ route('game.show', $data->id) }}" class="btn btn-warning btn-sm">Show</a>
-                                                            <a href="{{ route('game.edit', $data->id) }}" class="btn btn-success btn-sm">Edit</a>
-                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')">Delete</button>
+                                                            <a href="{{ route('game.show', $data->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye-fill"></i></a>
+                                                            <a href="{{ route('game.edit', $data->id) }}" class="btn btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin?')"><i class="bi bi-trash"></i></button>
                                                         </form>
                                                     </td>
                                                 </tr>

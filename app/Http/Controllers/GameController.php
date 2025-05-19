@@ -39,6 +39,15 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'judul'     => 'required|unique:games',
+            'deskripsi' => 'required|unique:games',
+            'foto'      => 'required|unique:games',
+            'penulis'   => 'required|unique:games',
+
+        ]);
+
         $game            = new Game;
         $game->judul     = $request->judul;
         $game->deskripsi = $request->deskripsi;
@@ -96,7 +105,16 @@ class GameController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $game = Game::findOrFail($id);
+
+        $validated = $request->validate([
+            'judul'     => 'required|unique:games',
+            'deskripsi' => 'required|unique:games',
+            'foto'      => 'required|unique:games',
+            'penulis'   => 'required|unique:games',
+
+        ]);
+
+        $game            = Game::findOrFail($id);
         $game->judul     = $request->judul;
         $game->deskripsi = $request->deskripsi;
         $game->penulis   = $request->penulis;
