@@ -6,7 +6,7 @@
 	<meta name="description" content="TheQuest Gaming Magazine Template">
 	<meta name="keywords" content="gaming, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 
@@ -40,12 +40,11 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<a href="index.html" class="site-logo">
-			<img src="img/logo.png" alt="logo">
+			<h2 class="text-white">Daily games</h2>
 		</a>
 		<ul class="main-menu">
-			<li><a href="index.html">Home</a></li>	
-            <li><a href="news.html">Kategori</a></li>
-			<li><a href="single-post.html">Log out</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="">Log out</a></li>
 		</ul>
 		<div class="header-add">
 			<img src="img/add.jpg" alt="">
@@ -96,11 +95,11 @@
                                 <div class="bg-light d-flex align-items-center justify-content-center"
                                      style="width: 200px; height: 150px;">
                                     Tidak ada foto
-                                </div>   
+                                </div>
                             @endif
 						<p> judul :  {{ $data->judul }}</p>
 						<p>Penulis : {{ $data->penulis }}</p>
-						<p> Genre : {{ $data->id_genre }}</p>
+						<p> Genre : {{ $data->genre->genre }}</p>
 						<div class="post-date">April 1, 2019</div>
 						<h3>The best games of 2019</h3>
 						<p>{{ $data->deskripsi }}</p>
@@ -110,91 +109,120 @@
 					@endforeach
 					<div class="row">
 						<div class="col-md-6">
+							@foreach ($game->skip(1)->take(1) as $data)
 							<div class="blog-post">
-								<img src="img/god of war.jpeg" alt="">
+							@if ($data->foto)
+                                <img src="{{ asset('storage/game/' . $data->foto) }}"
+                                     alt="foto"
+                                     class="img-fluid">
+                            @else
+                                <div class="bg-light d-flex align-items-center justify-content-center"
+                                     style="width: 200px; height: 150px;">
+                                    Tidak ada foto
+                                </div>
+                            @endif
+								<p> judul :  {{ $data->judul }}</p>
+						        <p> Penulis : {{ $data->penulis }}</p>
+						        <p> Genre : {{ $data->genre->genre }}</p>
 								<div class="post-date">April 1,2019</div>
 								<h4>The best games of 2019</h4>
+								<p>{{ $data->deskripsi }}</p>
 								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
 							</div>
 						</div>
+						@endforeach
 						<div class="col-md-6">
+						@foreach ($game->skip(2)->take(1) as $data)
 							<div class="blog-post">
-								<img src="img/re.jpg" alt="">
+							@if ($data->foto)
+                                <img src="{{ asset('storage/game/' . $data->foto) }}"
+                                     alt="foto"
+                                     class="img-fluid">
+                            @else
+                                <div class="bg-light d-flex align-items-center justify-content-center"
+                                     style="width: 200px; height: 150px;">
+                                    Tidak ada foto
+                                </div>
+                            @endif
+							    <p> judul :  {{ $data->judul }}</p>
+						        <p> Penulis : {{ $data->penulis }}</p>
+						        <p> Genre : {{ $data->genre->genre }}</p>
 								<div class="post-date">April 1,2019</div>
-								<h4>Tips to play a better game</h4>
+								<p>{{ $data->deskripsi }}</p>
 								<div class="post-metas">
-									<div class="post-meta">By Admin</div>
-									<div class="post-meta">in <a href="#">Games</a></div>
-									<div class="post-meta">3 Comments</div>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
-								<a href="#" class="read-more">Read More</a>
 							</div>
 						</div>
+						@endforeach
 					</div>
 				</div>
 				<div class="col-lg-4 sidebar">
 					<div class="sb-widget">
-						<form class="sb-search">
-							<input type="text" placeholder="Search">
-						</form>
-					</div>
-					<div class="sb-widget">
-						<h2 class="sb-title">Categories</h2>
-						<ul class="sb-cata-list">
-							<li><a href="">Games<span>20</span></a></li>
-							<li><a href="">Gaming Tips & Tricks<span>23</span></a></li>
-							<li><a href="">Online Games<span>25</span></a></li>
-							<li><a href="">Team Games<span>17</span></a></li>
-							<li><a href="">Community<span>15</span></a></li>
-							<li><a href="">Uncategorized<span>22</span></a></li>
-						</ul>
-					</div>
-					<div class="sb-widget">
-						<h2 class="sb-title">Latest News</h2>
 						<div class="latest-news-widget">
+							@foreach ($game->skip(3)->take(1) as $data)
 							<div class="ln-item">
-								<img src="img/hollow knight.jpeg" alt="">
+							@if ($data->foto)
+                                <img src="{{ asset('storage/game/' . $data->foto) }}"
+                                     alt="foto"
+                                     class="img-fluid">
+                            @else
+                                <div class="bg-light d-flex align-items-center justify-content-center"
+                                     style="width: 200px; height: 150px;">
+                                    Tidak ada foto
+                                </div>
+                            @endif
 								<div class="ln-text">
+								    <p> judul :  {{ $data->judul }}</p>
+						            <p> Penulis : {{ $data->penulis }}</p>
+						            <p> Genre : {{ $data->genre->genre }}</p>
 									<div class="ln-date">April 1, 2019</div>
-									<h6>10 Amazing new games</h6>
-									<div class="ln-metas">
-										<div class="ln-meta">By Admin</div>
-										<div class="ln-meta">in <a href="#">Games</a></div>
-										<div class="ln-meta">3 Comments</div>
-									</div>
+									<p>{{ $data->deskripsi }}</p>
 								</div>
 							</div>
+							@endforeach
 							<div class="ln-item">
-								<img src="img/valorant icon.png" alt="">
+								@foreach ($game->skip(4)->take(1) as $data)
+							@if ($data->foto)
+                                <img src="{{ asset('storage/game/' . $data->foto) }}"
+                                     alt="foto"
+                                     class="img-fluid">
+                            @else
+                                <div class="bg-light d-flex align-items-center justify-content-center"
+                                     style="width: 200px; height: 150px;">
+                                    Tidak ada foto
+                                </div>
+                            @endif
 								<div class="ln-text">
+								    <p> judul :  {{ $data->judul }}</p>
+						            <p> Penulis : {{ $data->penulis }}</p>
+						            <p> Genre : {{ $data->genre->genre }}</p>
 									<div class="ln-date">April 1, 2019</div>
-									<h6>10 Amazing new games</h6>
-									<div class="ln-metas">
-										<div class="ln-meta">By Admin</div>
-										<div class="ln-meta">in <a href="#">Games</a></div>
-										<div class="ln-meta">3 Comments</div>
-									</div>
+									<p>{{ $data->deskripsi }}</p>
 								</div>
 							</div>
+							@endforeach
 							<div class="ln-item">
-								<img src="img/forza.jpg" alt="">
+							@foreach ($game->skip(5)->take(1) as $data)
+							@if ($data->foto)
+                                <img src="{{ asset('storage/game/' . $data->foto) }}"
+                                     alt="foto"
+                                     class="img-fluid">
+                            @else
+                                <div class="bg-light d-flex align-items-center justify-content-center"
+                                     style="width: 200px; height: 150px;">
+                                    Tidak ada foto
+                                </div>
+                            @endif
 								<div class="ln-text">
+								    <p> judul :  {{ $data->judul }}</p>
+						            <p> Penulis : {{ $data->penulis }}</p>
+						            <p> Genre : {{ $data->genre->genre }}</p>
 									<div class="ln-date">April 1, 2019</div>
-									<h6>10 Amazing new games</h6>
-									<div class="ln-metas">
-										<div class="ln-meta">By Admin</div>
-										<div class="ln-meta">in <a href="#">Games</a></div>
-										<div class="ln-meta">3 Comments</div>
-									</div>
+									<p>{{ $data->deskripsi }}</p>
 								</div>
 							</div>
+							@endforeach
 							<div class="ln-item">
 								<img src="img/god of war.jpeg" alt="">
 								<div class="ln-text">
@@ -221,11 +249,11 @@
 	<!-- Blog section end -->
 
 	<!-- Blog list section -->
-	
+
 	<!-- Blog list section end -->
 
 	<!-- Video section -->
-     
+
 	<!-- Video section end -->
 
 	<!-- Footer section -->
@@ -324,7 +352,7 @@
 		</div>
 	</div>
 	<!-- Footer section end -->
-															
+
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{{ asset ('user/js/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{ asset ('user/js/bootstrap.min.js') }}"></script>

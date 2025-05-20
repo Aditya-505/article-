@@ -11,8 +11,15 @@ class FrontController extends Controller
     {
         $genre = Genre::all();
         $game = Game::all();
-       
 
         return view('welcome', compact('genre','game'));
     }
+
+    public function single($id)
+    {
+        $game = Game::findOrFail($id);
+        return view('page.single' , compact ('game'));
+    }
 }
+
+   

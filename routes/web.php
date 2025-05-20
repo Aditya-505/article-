@@ -23,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontController::class,'index']);
 
+Route::get('/anime/{id}', [FrontController::class, 'single'])->name('page.single');
+
+
 
 Auth::routes();
 
