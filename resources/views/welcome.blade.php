@@ -44,7 +44,7 @@
 		</a>
 		<ul class="main-menu">
 			<li><a href="/">Home</a></li>
-			<li><a href="">Log out</a></li>
+			<li><a href="single-post.html">Log out</a></li>
 		</ul>
 		<div class="header-add">
 			<img src="img/add.jpg" alt="">
@@ -60,7 +60,7 @@
 					<div class="row">
 						<div class="col-lg-10 offset-lg-1">
 							<h2>Daily Games</h2>
-							<a href="#" class="site-btn">Read More</a>
+							<a href="" class="site-btn">Read More</a>
 						</div>
 					</div>
 				</div>
@@ -121,6 +121,7 @@
                                     Tidak ada foto
                                 </div>
                             @endif
+							</a>
 								<p> judul :  {{ $data->judul }}</p>
 						        <p> Penulis : {{ $data->penulis }}</p>
 						        <p> Genre : {{ $data->genre->genre }}</p>
@@ -223,18 +224,6 @@
 								</div>
 							</div>
 							@endforeach
-							<div class="ln-item">
-								<img src="img/god of war.jpeg" alt="">
-								<div class="ln-text">
-									<div class="ln-date">April 1, 2019</div>
-									<h6>10 Amazing new games</h6>
-									<div class="ln-metas">
-										<div class="ln-meta">By Admin</div>
-										<div class="ln-meta">in <a href="#">Games</a></div>
-										<div class="ln-meta">3 Comments</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="sb-widget">

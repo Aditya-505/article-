@@ -163,7 +163,7 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
-                                            <div class="col-lg-6">
+                    <div class="col-lg-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading"> 
                         <form action="{{ route('genre.store') }}" method="post" enctype="multipart/form-data">
