@@ -87,6 +87,7 @@
 				<div class="col-lg-8 blog-posts">
 				@foreach ($game->take(1) as $data)
 					<div class="blog-post featured-post">
+					<a href="{{route('penjelasan', ['id' => $data->id])}}">
 					@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"
@@ -111,6 +112,7 @@
 						<div class="col-md-6">
 							@foreach ($game->skip(1)->take(1) as $data)
 							<div class="blog-post">
+								<a href="{{route('penjelasan', ['id' => $data->id])}}">
 							@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"
@@ -136,6 +138,7 @@
 						<div class="col-md-6">
 						@foreach ($game->skip(2)->take(1) as $data)
 							<div class="blog-post">
+							<a href="{{route('penjelasan', ['id' => $data->id])}}">
 							@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"
@@ -163,6 +166,7 @@
 						<div class="latest-news-widget">
 							@foreach ($game->skip(3)->take(1) as $data)
 							<div class="ln-item">
+							<a href="{{route('penjelasan', ['id' => $data->id])}}">
 							@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"
@@ -184,6 +188,7 @@
 							@endforeach
 							<div class="ln-item">
 								@foreach ($game->skip(4)->take(1) as $data)
+								<a href="{{route('penjelasan', ['id' => $data->id])}}">
 							@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"
@@ -205,6 +210,7 @@
 							@endforeach
 							<div class="ln-item">
 							@foreach ($game->skip(5)->take(1) as $data)
+							<a href="{{route('penjelasan', ['id' => $data->id])}}">
 							@if ($data->foto)
                                 <img src="{{ asset('storage/game/' . $data->foto) }}"
                                      alt="foto"

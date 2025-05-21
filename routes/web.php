@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontController::class,'index']);
 
-Route::get('/penjelasan/{$id}', [FrontController::class, 'show'])->name('penjelasan');
+Route::get('/penjelasan/{id}', [FrontController::class, 'show'])->name('penjelasan');
 
 Auth::routes();
 
